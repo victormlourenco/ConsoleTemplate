@@ -25,7 +25,7 @@ namespace ConsoleTemplate.Crosscutting.IoC
 
             // build configuration
             var configuration = new ConfigurationBuilder()
-                .SetBasePath(Directory.GetCurrentDirectory())
+                .SetBasePath(Directory.GetParent(AppContext.BaseDirectory).FullName)
                 .AddJsonFile(path: "appsettings.json", optional: false, reloadOnChange: true)
                 .Build();
 
